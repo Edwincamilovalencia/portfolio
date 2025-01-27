@@ -206,3 +206,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+//  
+    document.addEventListener('scroll', function() {
+    const nav = document.querySelector('.sidepanel-nav');
+
+    if (window.scrollY > 100) {  
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});

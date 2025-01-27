@@ -1,367 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
 <body>
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="profile-banner">
-                <div class="profile-container">
-                    <img src="../src/assets/css/images/MIFoto2.0.png" alt="Foto de Edwin Camilo Valencia Bustamante"
-                        class="profile-photo framed-circle">
-                </div>
-                <h1 class="split-text-container" data-text="Edwin Camilo Valencia Bustamante">Edwin Camilo Valencia Bustamante</h1>
-                <h3>Ingeniero de sistemas y telecomunicaciones</h3>
-            </div>
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <a href="../src/cv/CV- EDWIN VALENCIA2024-2.pdf" download="Edwin_Camilo_Valencia_Bustamante_CV.pdf"
-                    class="download-cv btn-hover-effect">Descargar CV</a>
-                <!-- Social Links -->
-                <div class="social-links" aria-label="Social media links">
-                    <a href="https://github.com/Edwincamilovalencia" target="_blank" class="social-link"
-                        aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/edwin-valencia-819b80250/" target="_blank" class="social-link"
-                        aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-container"></div>
+    <div id="navigation-container"></div>
     <main>
         <div class="main-wrapper">
-            <div class="contenedorAbout">
-                <!-- Navigation Panel Container -->
-                <aside class="nav-container">
-                    <nav class="nav-panel">
-                        <div class="about-section">
-                            <h2>About Me</h2>
-                            <p>Hola 👋</p>
-                            <p>Mi nombre es Edwin Camilo Valencia Bustamante, soy ingeniero de sistemas y
-                                telecomunicaciones, y disfruto transformar ideas en soluciones prácticas a través de la
-                                tecnología.</p>
-                            <!-- Navigation Links -->
-                            <ul>
-                                <li><a href="#proyectos">Proyectos <i class="fas fa-code"></i></a></li>
-                                <li><a href="#habilidades">Habilidades <i class="fas fa-tools"></i></a></li>
-                                <li><a href="#educacion">Educación <i class="fas fa-graduation-cap"></i></a></li>
-                                <li><a href="#contactame">Contáctame <i class="fas fa-envelope"></i></a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </aside>
-            </div> 
-            <!-- Added an empty vertical container -->
             <div class="content-container">
-                <div class="content-panel">
-                    <!-- Projects Section -->
-                    <section id="proyectos" class="content-section">
-                        <h2>Proyectos</h2>
-                        <div class="project-grid">
-                            <!-- Project 1 - Dashboard Extranjeros Colombia -->
-                            <article class="project-item featured">
-                                <div class="project-content">
-                                    <img src="assets/css/images/imgDashboard.png" alt="Dashboard Extranjeros Colombia">
-                                    <h3>Dashboard Extranjeros Colombia</h3>
-                                    <p>Dashboard interactivo con Power BI, automatizado con Power Automate y
-                                        complementado con JavaScript, HTML, CSS y Bootstrap.</p>
-                                    <div class="project-actions">
-                                        <a href="https://dashboardextranjeroscol.netlify.app/" target="_blank"
-                                           class="btn-hover-effect">Ver Proyecto</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Project 2 -->
-                            <article class="project-item">
-                                <div class="project-item-content">
-                                    <img src="../src/assets/css/images/2proyecto.png" alt="Proyecto 2">
-                                    <h3>Creación Portafolio</h3>
-                                    <p>Portafolio profesional creado con HTML, CSS, JavaScript.</p>
-                                    <div class="project-actions">
-                                        <a href="link-al-proyecto1" target="_blank" class="btn-hover-effect">Ver
-                                            Proyecto</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- Project 3
-                            <article class="project-item">
-                                <div class="project-item-content">
-                                    <img src="assets/css/images/project2.jpg" alt="Proyecto 2">
-                                    <h3>Nombre del Proyecto 2</h3>
-                                    <p>Breve descripción del proyecto. Tecnologías utilizadas: React, Node.js, MongoDB.</p>
-                                    <div class="project-actions">
-                                        <a href="link-al-proyecto2" target="_blank" class="btn-hover-effect">Ver
-                                            Proyecto</a>
-                                    </div>
-                                </div>
-                            </article>
-                             -->
-                            <!-- Project 4 -->
-                             
-                            <!-- Project 4 
-                            <article class="project-item">
-                                <div class="project-item-content">
-                                    <img src="assets/css/images/project3.jpg" alt="Proyecto 3">
-                                    <h3>Nombre del Proyecto 3</h3>
-                                    <p>Breve descripción del proyecto. Tecnologías utilizadas: Python, Django,
-                                        PostgreSQL.</p>
-                                    <div class="project-actions">
-                                        <a href="link-al-proyecto3" target="_blank" class="btn-hover-effect">Ver
-                                            Proyecto</a>
-                                    </div>
-                                </div>
-                            </article>
-                            -->
-                        </div>
-                    </section>
-                    <!-- Skills Section -->
-                    <section id="habilidades" class="content-section">
-                        <h2>Habilidades</h2>
-                        <div class="skills-container">
-                            <div class="skill-grid">
-                                <div class="skill-card">
-                                    <img src="../src/assets/css/images/ANGULAR.png" alt="Angular">
-                                </div>
-                                <div class="skill-card">
-                                    <img src="../src/assets/css/images/HTML.png" alt="HTML">
-                                </div>
-                                  <div class="skill-card">
-                                      <img src="../src/assets/css/images/CSS.png" alt="CSS">
-                                  </div>
-                                <div class="skill-card">
-                                    <img src="../src/assets/css/images/JS.png" alt="JavaScript">
-                                </div>
-                                <div class="skill-card">
-                                    <img src="../src/assets/css/images/MYSQL.png" alt="MySQL">
-                                </div>
-                                  <div class="skill-card">
-                                     <img src="../src/assets/css/images/PYTHON.png" alt="Python">
-                                </div>
-                                  <div class="skill-card">
-                                      <img src="../src/assets/css/images/NODEJS.png" alt="Node.js">
-                                    </div>
-                                 <div class="skill-card">
-                                    <img src="../src/assets/css/images/GITHUB.png" alt="GitHub">
-                                </div>
-                                  <div class="skill-card">
-                                    <img src="../src/assets/css/images/GITLAB.png" alt="GitLab">
-                                </div>
-                                    <div class="skill-card">
-                                        <img src="../src/assets/css/images/POSTGRESS.png" alt="PostgreSQL">
-                                    </div>
-                                     <div class="skill-card">
-                                         <img src="../src/assets/css/images/SCRUM.png" alt="Scrum">
-                                    </div>
-                                   <div class="skill-card">
-                                      <img src="../src/assets/css/images/CISCO.png" alt="Cisco Packet Tracer">
-                                    </div>
-                                    <div class="skill-card">
-                                      <img src="../src/assets/css/images/AWS.png" alt="AWS">
-                                    </div>
-                                 <div class="skill-card">
-                                    <img src="../src/assets/css/images/AZURE.png" alt="Azure">
-                                </div>
-                                </div>
-                            </div>
-                    </section>
+                 <div class="content-panel">
+                   <!-- Projects Section -->
+                    <div class="content-section" id="proyects-container"></div>
+                     <!-- Skills Section -->
+                     <div class="content-section" id="skills-container"></div>
                     <!-- Education Section -->
-                    <section id="educacion" class="content-section">
-                        <h2>Educación</h2>
-                        <div class="education-container">
-                            <!-- Carrusel para la educación -->
-                            <div class="education-carousel-container">
-                                 <div class="carousel education-carousel">
-                                     <div class="carousel-slide">
-                                          <div class="catalog-card current" data-year="2024">
-                                             <div class="card-content">
-                                                <div class="card-icon">💻</div>
-                                                <div class="card-text">
-                                                     <p>Ingeniería de Sistemas</p>
-                                                      <p>Universidad de Manizales: Noveno semestre</p>
-                                                </div>
-                                                <span class="card-year">2025</span>
-                                                <span class="current-label">Actual</span>
-                                             </div>
-                                         </div>
-                                     </div>
-                                       <div class="carousel-slide">
-                                          <div class="catalog-card" data-year="2022">
-                                            <div class="card-content">
-                                               <div class="card-icon">🌐</div>
-                                               <div class="card-text">
-                                                    <p>Inglés</p>
-                                                    <p>Centro Colombo Americano: Nivel B2</p>
-                                                </div>
-                                                <span class="card-year">2022</span>
-                                             </div>
-                                         </div>
-                                       </div>
-                                        <div class="carousel-slide">
-                                            <div class="catalog-card" data-year="2019">
-                                                <div class="card-content">
-                                                  <div class="card-icon">⚡</div>
-                                                  <div class="card-text">
-                                                      <p>Téc. Instalaciones Eléctricas</p>
-                                                       <p>Institución: SENA</p>
-                                                    </div>
-                                                   <span class="card-year">2019</span>
-                                               </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-slide">
-                                            <div class="catalog-card" data-year="2019">
-                                               <div class="card-content">
-                                                  <div class="card-icon">🎓</div>
-                                                    <div class="card-text">
-                                                        <p>Bachiller Técnico</p>
-                                                       <p>Instituto técnico Francisco José de Caldas</p>
-                                                   </div>
-                                                  <span class="card-year">2019</span>
-                                               </div>
-                                             </div>
-                                        </div>
-                                        <!-- Añade más slides aquí -->
-                                </div>
-                                   <div class="carousel-dots education-dots"></div>
-                            </div>
-                            <!-- Carrusel para los certificados de cursos -->
-                            <div class="certificates-carousel-container">
-                                <h3>Cursos y Certificados</h3>
-                                 <div class="carousel certificates-carousel">
-                                     <div class="carousel-slide">
-                                          <div class="certificate-card" data-modal="modal-curso1">
-                                             <div class="certificate-card-content">
-                                                 <img src="../src/assets/css/images/CertificadoAngular.png" alt="Certificado Curso 1" style="max-width: 100%; height: auto;">
-                                                 <p>Certificado Angular. Certifica: Opened</p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                     <div class="carousel-slide">
-                                          <div class="certificate-card" data-modal="modal-curso2">
-                                              <div class="certificate-card-content">
-                                                <img src="../src/assets/css/images/CertificadoAWS.png" alt="Certificado Curso 2" style="max-width: 100%; height: auto;">
-                                                <p>Certificado AWS. Certifica: Opened</p>
-                                              </div>
-                                         </div>
-                                     </div>
-                                       <div class="carousel-slide">
-                                         <div class="certificate-card" data-modal="modal-curso3">
-                                               <div class="certificate-card-content">
-                                                <img src="../src/assets/css/images/CertificadoPythonYShell.png" alt="Certificado Curso 3" style="max-width: 100%; height: auto;">
-                                               <p>Certificado Introduccion a python y shell scripting. Certifica: Opened</p>
-                                               </div>
-                                         </div>
-                                    </div>
-                                    <div class="carousel-slide">
-                                        <div class="certificate-card" data-modal="modal-curso4">
-                                              <div class="certificate-card-content">
-                                               <img src="../src/assets/css/images/CertificadoJavaScrtp.png" alt="Certificado Curso 4" style="max-width: 100%; height: auto;">
-                                                <p>Certificado JavaScript. Certifica: Opened</p>
-                                              </div>
-                                        </div>
-                                   </div>
-                                    <div class="carousel-slide">
-                                        <div class="certificate-card" data-modal="modal-curso5">
-                                              <div class="certificate-card-content">
-                                               <img src="../src/assets/css/images/Certificado DiseñoWebHtmlYCss.png" alt="Certificado Curso 5" style="max-width: 100%; height: auto;">
-                                              <p>Certificado Diseño web en HTML Y CSS. Certifica: Opened</p>
-                                              </div>
-                                        </div>
-                                    </div>
-                                   <!-- Añade más slides aquí -->
-                                </div>
-                               <div class="carousel-dots certificates-dots"></div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Modales (ventanas emergentes) para los certificados de cursos -->
-                    <div id="modal-curso1" class="modal">
-                        <div class="modal-content">
-                            <span class="close-modal">×</span>
-                            <h2>Certificado Angular. Certifica Opened</h2>
-                            <img src="../src/assets/css/images/CertificadoAngular.png" alt="Certificado del Curso 1" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-                    
-                    <div id="modal-curso2" class="modal">
-                        <div class="modal-content">
-                            <span class="close-modal">×</span>
-                            <h2>Certificado AWS. Certifica: Opened</h2>
-                            <img src="../src/assets/css/images/CertificadoAWS.png" alt="Certificado del Curso 2" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-                    
-                    <div id="modal-curso3" class="modal">
-                        <div class="modal-content">
-                            <span class="close-modal">×</span>
-                            <h2>Certificado Introduccion a python y shell scripting. Certifica: Opened</h2>
-                            <img src="../src/assets/css/images/CertificadoPythonYShell.png" alt="Certificado del Curso 3" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-
-                    <div id="modal-curso4" class="modal">
-                        <div class="modal-content">
-                            <span class="close-modal">×</span>
-                            <h2>Certificado JavaScript. Certifica: Opened</h2>
-                            <img src="../src/assets/css/images/CertificadoJavaScrtp.png" alt="Certificado del Curso 4" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-
-                    <div id="modal-curso5" class="modal">
-                        <div class="modal-content">
-                            <span class="close-modal">×</span>
-                            <h2>Certificado Diseño web en HTML Y CSS. Certifica: Opened</h2>
-                            <img src="../src/assets/css/images/Certificado DiseñoWebHtmlYCss.png" alt="Certificado del Curso 5" style="max-width: 100%; height: auto;">
-                        </div>
-                    </div>
-                    <!-- Contact Section -->
-                    <section id="contactame" class="content-section">
-                        <h2>Contáctame</h2>
-                        <div class="contact-container">
-                            <form>
-                                <div class="form-group">
-                                    <label for="name">Nombre:</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Correo Electrónico:</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Mensaje:</label>
-                                    <textarea id="message" name="message" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn-hover-effect">Enviar Mensaje</button>
-                            </form>
-                        </div>
-                    </section>
-                </div>
+                    <div class="content-section" id="education-container"></div>
+                   <!-- Modales (ventanas emergentes) para los certificados de cursos -->
+                   <div class="content-section" id="modal-container"></div>
+                     <!-- Contact Section -->
+                    <div class="content-section" id="contact-container"></div>
+                 </div>
             </div>
         </div>
     </main>
     <!-- Footer -->
-    <footer>
-        <p>© 2024 Edwin Camilo Valencia Bustamante</p>
-    </footer>
+    <div id="footer-container"></div>
+  <script src="assets/js/app.js"></script>
+    <script>
+        // Cargar el header
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
 
-    <script src="assets/js/scripts.js"></script>
+             // Cargar la navegación
+        fetch('components/navegation.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navigation-container').innerHTML = data);
+
+         // Cargar la sección de proyectos
+        fetch('components/Proyects.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('proyects-container').innerHTML = data);
+
+        // Cargar la sección de habilidades
+        fetch('components/Habilities.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('skills-container').innerHTML = data);
+
+        // Cargar la sección de educación
+          fetch('components/education.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('education-container').innerHTML = data);
+
+        // Cargar los modales
+         fetch('components/modal.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('modal-container').innerHTML = data);
+
+        // Cargar la sección de contacto
+        fetch('components/contact.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('contact-container').innerHTML = data);
+
+        // Cargar el footer
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+
+    </script>
 </body>
-
 </html>
