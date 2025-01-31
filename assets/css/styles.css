@@ -1173,7 +1173,7 @@ content-container Styles - Responsive
     max-width: 1200px;
     position: relative;
     overflow: hidden;
-    padding: 150px 0;
+    padding: 20px 0;
     margin: 3rem auto;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.02); /* Fondo muy sutil */
@@ -1190,29 +1190,34 @@ content-container Styles - Responsive
     z-index: 2;
 }
 
+
 #proyectos h2 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: -3rem;
-    font-weight: 700; /* Mayor grosor */
-    letter-spacing: 1px;
-    text-align: left;
-    position: relative;
-    top: -4rem;
-    left: 50px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Mayor sombra */
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: left;
+  position: relative;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    padding-left: 50px;  
+    margin-top: 40px;
 }
 
-#proyectos h2::after {
+#proyectos h2::before {
     content: '';
     position: absolute;
-    bottom: -10px; /* Ajuste de posición */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px; /* Mayor ancho */
-    height: 3px;
-    background: linear-gradient(to right, var(--color-accent), transparent); /* Degradado sutil */
-    transition: width 0.3s ease;
+    bottom: -8px;
+    left: 0; /* Start from the left */
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-accent), transparent);
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+}
+
+#proyectos:hover h2::before {
+    width: 70px; /* Expand on hover */
 }
 
 .project-item {
@@ -1528,7 +1533,7 @@ content-container Styles - Responsive
     padding: 4rem 3rem;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Light shadow */
     backdrop-filter: blur(12px);
     position: relative;
@@ -1602,7 +1607,7 @@ content-container Styles - Responsive
   .skill-card {
     background: rgba(255, 255, 255, 0.03);
     padding: 1.4rem;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
     color: var(--color-text);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1639,7 +1644,7 @@ content-container Styles - Responsive
   }
   
   .skill-card img {
-      max-width: 60%;
+      max-width: 40%;
       max-height: 60%;
       display: block;
       margin: auto;
@@ -1731,434 +1736,251 @@ content-container Styles - Responsive
   Education Section Styles - Enhanced Layout
   ========================================================================== */
 /* Estilos generales para la sección de educación */
-#educacion {
-  padding: 6rem 2rem;
-  background: var(--gradient-primary);
-  color: var(--color-text);
-  font-family: var(--font-base);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+#education-section {
+  padding: 40px 20px;
+  width: 780px;
+  margin-top: -100px;
+  background: rgba(255, 255, 255, 0.02); /* Fondo muy sutil */
+  border-radius: 10px;
 }
 
-/* Efecto de fondo sutil */
-#educacion::before {
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #333;
+  font-weight: bold;
+}
+.section-subtitle{
+   text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+   font-weight: bold;
+}
+.education-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espacio entre la timeline y los certificados */
+}
+
+
+/* Estilos del Timeline */
+.timeline-container {
+  width: 100%;
+  position: relative; /* Para el posicionamiento del línea vertical */
+  padding-left: 60px; /* Espacio para la línea vertical y los puntos */
+}
+
+.timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.03), transparent);
-  z-index: 0;
-  pointer-events: none;
+  bottom: 0;
+  left: 25px; /* Centrar la línea vertical */
+  width: 2px;
+  background-color: #ddd;
 }
 
-/* Título de la sección */
-#educacion h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 5rem;
-  color: var(--color-secondary);
-  font-weight: 400;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
   position: relative;
-  display: inline-block;
-  text-shadow: var(--shadow-text);
 }
 
-#educacion h2::before,
-#educacion h2::after {
+.timeline-item::before {
   content: '';
   position: absolute;
-  width: 40px;
-  height: 1px;
-  background: var(--color-accent);
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.3;
+  left: 21px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background-color: #ddd; /* Color de los puntos */
+  border-radius: 50%;
+  z-index: 1;
 }
 
-#educacion h2::before {
-  left: -50px;
-}
-
-#educacion h2::after {
-  right: -50px;
-}
-
-/* Contenedor de educación */
-.education-container {
-  max-width: 1300px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 1rem;
-}
-
-/* Carrusel de educación */
-.education-carousel-container {
-  margin-bottom: 5rem;
-  width: 100%;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  gap: 3rem;
-  padding-bottom: 3rem;
-  -webkit-overflow-scrolling: touch;
+.timeline-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+   border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   position: relative;
+  display: flex; /* Para alinear icono y texto */
+  align-items: center;
+  gap: 20px; /* Espacio entre icono y texto */
+}
+
+.timeline-content .icon {
+  font-size: 2.5rem;
+   color: #555;
+}
+.timeline-content .text{
+  flex-grow: 1;
+}
+.timeline-content .text p:first-child {
+  font-weight: 600;
+  margin-bottom: 5px;
+   color: #333;
+}
+.timeline-content .text p {
+  color: #555;
+   font-size: 0.9rem;
+  margin: 0;
+}
+.timeline-content .year{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #888;
+  padding: 4px 8px;
+   background-color: #f0f0f0;
+   border-radius: 4px;
+}
+.timeline-content.current {
+  background-color: #e0f7fa; /* Un color más suave */
+}
+.timeline-content .current-label{
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+   font-size: 0.8rem;
+   padding: 4px 8px;
+   border-radius: 4px;
+  background-color: #b2ebf2;
+   color: #0077b6;
+}
+/* Estilos del Carrusel de Certificados */
+.certificates-container {
+  margin-top: 20px;
+}
+
+.certificates-carousel {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%; /* Ajustado para evitar que se salga del contenedor */
 }
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
 .carousel-slide {
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  width: 380px;
-}
-
-.catalog-card {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 2.2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  z-index: 1;
-}
-
-.catalog-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(var(--color-highlight-rgb), 0.04), transparent);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  z-index: -1;
-}
-
-.catalog-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.catalog-card:hover::before {
-  opacity: 1;
-}
-
-.card-content {
-  text-align: center;
-}
-
-.card-icon {
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
-  color: var(--color-accent);
-  text-shadow: var(--shadow-text);
-}
-
-.card-text p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: var(--color-secondary);
-  text-shadow: var(--shadow-text);
-}
-
-.card-year {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--color-text);
-  margin-top: 1.2rem;
-}
-
-.current-label {
-  display: inline-block;
-  background: var(--color-special);
-  color: var(--color-dark);
-  font-size: 0.75rem;
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
-  margin-top: 0.6rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-weight: 500;
-}
-
-/* Carrusel de certificados */
-.certificates-carousel-container {
-  width: 100%;
-}
-
-.certificates-carousel-container h3 {
-  font-size: 2.6rem;
-  text-align: center;
-  margin-bottom: 5rem;
-  color: var(--color-secondary);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  position: relative;
-  display: inline-block;
-  text-shadow: var(--shadow-text);
-}
-
-.certificates-carousel-container h3::before,
-.certificates-carousel-container h3::after {
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 1px;
-  background: var(--color-accent);
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.3;
-}
-
-.certificates-carousel-container h3::before {
-  left: -50px;
-}
-
-.certificates-carousel-container h3::after {
-  right: -50px;
+  flex: 0 0 30%; /* Ajustado el ancho de los slides */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .certificate-card {
- background: rgba(255, 255, 255, 0.04);
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  z-index: 1;
-}
-
-.certificate-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(var(--color-highlight-rgb), 0.04), transparent);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  z-index: -1;
-}
-
-.certificate-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.certificate-card:hover::before {
-  opacity: 1;
-}
-
-.certificate-card-content {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.certificate-card-content img {
+background-color: white;
+  padding: 10px;
   border-radius: 8px;
-  margin-bottom: 1.1rem;
-  width: 100%;
-  height: auto;
+   border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.certificate-card:hover {
+  transform: scale(1.03); /* Ligero efecto de zoom al pasar el cursor */
+}
+
+
+.certificate-card img {
+  max-width: 100%;
+   height: auto;
+  margin-bottom: 10px;
   display: block;
 }
-
-.certificate-card-content p {
+.certificate-card p {
   font-size: 0.9rem;
-  color: var(--color-secondary);
+  text-align: center;
   margin: 0;
+   color: #555;
 }
 
-/* Modal para ver certificados */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dots span.active {
+  background-color: #777;
+}
+
+/* Estilos del Modal */
 .modal {
   display: none;
   position: fixed;
-  top: 0;
+  z-index: 1000;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-}
-
-.modal.open {
-  display: flex;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
-  background: var(--color-dark);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: auto;
-  text-align: center;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .modal-content img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
 }
 
 .close-modal {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
-  font-size: 1.6rem;
-  color: var(--color-secondary);
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
-  background: none;
   border: none;
-  transition: color 0.2s ease;
+  background: none;
 }
-
-.close-modal:hover {
-  color: var(--color-special);
-}
-
-/* Puntos del carrusel */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.carousel-dots span {
-  width: 7px;
-  height: 7px;
-  background: var(--color-text);
-  border-radius: 50%;
-  margin: 0 6px;
+.close-modal:hover, .close-modal:focus{
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  transition: background 0.2s ease, opacity 0.2s ease;
-  opacity: 0.3;
 }
-
-.carousel-dots span.active {
-  background: var(--color-accent);
-  opacity: 0.7;
-}
-
-/* Responsive */
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
-  #educacion {
-      padding: 5rem 1rem;
-  }
-  #educacion h2 {
-      font-size: 2.4rem;
-      margin-bottom: 4rem;
-  }
- #educacion h2::before,
- #educacion h2::after {
-      width: 30px;
-  }
-  #educacion h2::before {
-      left: -40px;
-  }
-  #educacion h2::after {
-     right: -40px;
-  }
-  .education-carousel-container {
-      margin-bottom: 4rem;
-  }
+   .timeline-container {
+     padding-left: 40px;
+   }
+   .timeline-item::before {
+       left: 19px;
+   }
   .carousel-slide {
-      width: 320px;
-  }
-  .certificates-carousel-container h3 {
-      font-size: 2.1rem;
-      margin-bottom: 4rem;
-  }
- .certificates-carousel-container h3::before,
- .certificates-carousel-container h3::after {
-     width: 30px;
-  }
-  .certificates-carousel-container h3::before {
-     left: -40px;
-  }
- .certificates-carousel-container h3::after {
-    right: -40px;
-  }
-  .carousel {
-      gap: 2rem;
-      padding-bottom: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
- #educacion {
-      padding: 4rem 1rem;
-  }
-  #educacion h2 {
-      font-size: 2rem;
-      margin-bottom: 3rem;
-  }
- #educacion h2::before,
- #educacion h2::after {
-     width: 20px;
-  }
- #educacion h2::before {
-    left: -30px;
-  }
-  #educacion h2::after {
-     right: -30px;
-  }
-  .education-carousel-container {
-      margin-bottom: 3rem;
-  }
-  .carousel-slide {
-      width: 270px;
-  }
-  .card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-  }
-  .certificates-carousel-container h3 {
-      font-size: 1.8rem;
-      margin-bottom: 3rem;
-  }
- .certificates-carousel-container h3::before,
- .certificates-carousel-container h3::after {
-     width: 20px;
- }
- .certificates-carousel-container h3::before {
-      left: -30px;
- }
- .certificates-carousel-container h3::after {
-     right: -30px;
- }
-  .carousel {
-      gap: 1.5rem;
-      padding-bottom: 1.5rem;
+      flex: 0 0 100%; /* Cambia a una columna en pantallas pequeñas */
   }
 }
 /* ==========================================================================
