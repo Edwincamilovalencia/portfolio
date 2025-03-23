@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Añade estos enlaces en el <head> de tu HTML principal -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    
+
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-container"></div>
+    <div id="navigation-container"></div>
+    <main>
+        <div class="main-wrapper">
+            <div class="content-container">
+                 <div class="content-panel">
+                   <!-- Projects Section -->
+                    <div class="content-section" id="proyects-container"></div>
+                     <!-- Skills Section -->
+                     <div class="content-section" id="skills-container"></div>
+                    <!-- Education Section -->
+                    <div class="content-section" id="education-section"></div>
+                    <!-- Education Section -->
+                    <div class="content-section" id="certificates-section"></div>
+                     <!-- Contact Section -->
+                    <div class="content-section" id="contact-container"></div>
+                 </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <!-- From Uiverse.io by DevPTG --> 
+  <script src="assets/js/app.js"></script>
+    <script>
+        // Cargar el header
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+
+             // Cargar la navegación
+        fetch('components/navegation.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navigation-container').innerHTML = data);
+
+         // Cargar la sección de proyectos
+        fetch('components/Proyects.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('proyects-container').innerHTML = data);
+
+        // Cargar la sección de habilidades
+        fetch('components/Habilities.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('skills-container').innerHTML = data);
+
+        // Cargar la sección de educación
+          fetch('components/education.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('education-section').innerHTML = data);
+
+        // Cargar los modales
+         fetch('components/certificados.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('certificates-section').innerHTML = data);
+
+        // Cargar la sección de contacto
+        fetch('components/contact.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('contact-container').innerHTML = data);
+
+        // Cargar el footer
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+
+    </script>
+</body>
+</html>
