@@ -790,204 +790,277 @@ about Styles
 }
 
 /* ==========================================================================
-  Navigation Styles
-========================================================================== */
-/* ==========================================================================
-   Navigation Container Styles
+   Navigation Container Styles - Creative Minimalist
    ========================================================================== */
    #navigation-container {
     width: 100%;
-    height: 100px;
+    height: auto; /* Cambiado de altura fija a auto */
+    min-height: 70px; /* Altura mínima en lugar de fija */
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 10;
-  }
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0; /* Añadido padding vertical */
+}
 
-
-  
 /* ==========================================================================
-Side Panel Navigation Styles
-========================================================================== */
-     .sidepanel-nav {
-      position: sticky;
-      top: 20px;
-      z-index: 1000;
-      background: rgba(15, 15, 15, 0.247);
-      backdrop-filter: blur(20px);
-      border-radius: 25px;
-      padding: 15px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-      transition: all 0.5s ease;
-    }
-    
-    .sidepanel-menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 12px;
-    }
-    
+   Side Panel Navigation Styles - Creative Minimalist
+   ========================================================================== */
+.sidepanel-nav {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    border-radius: 25px;
+    padding: 15px;
+    transition: all 0.5s ease;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    max-width: 100%; /* Limita el ancho máximo */
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+}
+
+.sidepanel-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los elementos */
+}
+
 .sidepanel-menu li {
-  position: relative;
-  opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex: 0 1 auto; /* Flexibilidad para adaptarse */
+    flex-shrink: 1; /* Allow shrinking */
 }
 
 .sidepanel-menu li:hover {
-  opacity: 1;
-  transform: translateX(-8px);
+    opacity: 1;
+    transform: translateX(-8px);
 }
 
 .sidepanel-menu a {
-  text-decoration: none;
-  color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  border-radius: 20px;
-  transition: all 0.4s ease;
-  background: rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
+    text-decoration: none;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Evita saltos de línea en el texto */
 }
 
 /* Efecto de fondo animado al hacer hover */
 .sidepanel-menu a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 126, 95, 0.3), transparent);
-  transition: left 0.6s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 126, 95, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
 .sidepanel-menu a:hover::before {
-  left: 100%;
+    left: 100%;
 }
 
 /* Efecto de escala y sombra al hacer hover */
 .sidepanel-menu a:hover {
-  background: rgba(255, 126, 95, 0.1);
-  box-shadow: 0 4px 20px rgba(255, 126, 95, 0.4);
-  transform: scale(1.05);
+    background: rgba(255, 126, 95, 0.1);
+    box-shadow: 0 4px 20px rgba(255, 126, 95, 0.4);
+    transform: scale(1.05);
 }
 
 /* Animación de los íconos */
 .sidepanel-menu a i {
-  font-size: 1.2em;
-  transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .sidepanel-menu a:hover i {
-  transform: rotate(20deg);
-  color: #ff7e5f;
+    transform: rotate(20deg);
+    color: #ff7e5f;
 }
 
 /* Efecto de borde animado */
 .sidepanel-menu a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
 }
 
 .sidepanel-menu a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Efecto de texto flotante */
 .sidepanel-menu a span {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .sidepanel-menu a:hover span {
-  transform: translateX(5px);
+    transform: translateX(5px);
 }
-
 
 /* ==========================================================================
    Responsive Styles for Side Panel Nav
    ========================================================================== */
-   @media screen and (max-width: 1500px) {
-    .sidepanel-menu {
-      max-width: 98%;
+/* Pantallas grandes y medianas */
+@media screen and (min-width: 1501px) {
+    .sidepanel-nav {
+        max-width: 300px; /* Ancho máximo en pantallas grandes */
     }
-  }
-  
-  /* Estilos para dispositivos móviles (menos de 768px) */
-  @media screen and (max-width: 768px) {
-      .sidepanel-nav {
-        position: fixed; /* Cambia a fixed para estar en la parte inferior */
-        top: auto; /* Reinicia el top por si estaba afectando */
-        bottom: 20px; /* Posición desde la parte inferior */
-        right: 50%; /* Centrar horizontalmente */
-        transform: translateX(50%); /* Ajustar el centrado */
-        width: 90%; /* Ancho del menú */
-        max-width: 400px; /* Ancho máximo para pantallas grandes */
-        padding: 10px; /* Reducir el padding */
-        border-radius: 20px; /* Bordes redondeados */
-        background-color: rgba(15, 15, 15, 0.95); /* Fondo más oscuro para móviles */
-      }
-      
-      .sidepanel-menu {
-          flex-direction: row; /* Distribución horizontal para los enlaces */
-          justify-content: space-around; /* Espacio equitativo entre los enlaces */
-          gap: 8px; /* Espacio entre los enlaces */
-          background: transparent;
-      }
-  
-      .sidepanel-menu li {
-          margin: 0; /* Elimina el margen para que quepa mejor */
-      }
-      
-      .sidepanel-menu a {
-          padding: 10px 15px; /* Reducir el padding del enlace */
-          font-size: 0.9em; /* Reducir el tamaño de la fuente */
-      }
-      
-      .sidepanel-menu a i {
-          font-size: 1em; /* Ajusta el tamaño del icono */
-      }
-      .sidepanel-menu li::after {
-        display: none;
-      }
-  }
-  
-  /* Ajustes para pantallas aún más pequeñas (Ej: Teléfonos muy pequeños) */
-  @media screen and (max-width: 375px) {
-      .sidepanel-nav {
-          width: 95%; /* Un poco más estrecho en pantallas muy pequeñas */
-          padding: 5px;
-      }
+}
+
+/* Pantallas medianas */
+@media screen and (max-width: 1500px) and (min-width: 1024px) {
+    .sidepanel-menu {
+        max-width: 100%;
+    }
     
     .sidepanel-menu a {
-          padding: 8px 10px; /* Reducir más el padding */
-          font-size: 0.8em;
-      }
-  }
+        padding: 10px 15px;
+    }
+}
+
+/* Tablets y pantallas medianas */
+@media screen and (max-width: 1023px) and (min-width: 769px) {
+    .sidepanel-nav {
+        padding: 12px;
+    }
+    
+    .sidepanel-menu {
+        gap: 10px;
+    }
+    
+    .sidepanel-menu a {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+}
+
+/* Dispositivos móviles (menos de 768px) */
+@media screen and (max-width: 768px) {
+    .sidepanel-nav {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+        /* max-width: 400px; Remove max-width or adjust it */
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgba(15, 15, 15, 0.95);
+    }
+
+    .sidepanel-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 8px;
+        background: transparent;
+    }
+
+    .sidepanel-menu li {
+        margin: 0;
+    }
+
+    .sidepanel-menu a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .sidepanel-menu a i {
+        font-size: 1em;
+    }
+
+    .sidepanel-menu li::after {
+        display: none;
+    }
+    
+    /* Ajuste para el transform en móvil */
+    .sidepanel-menu li:hover {
+        transform: translateX(0); /* Elimina el desplazamiento en móvil */
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+    .sidepanel-nav {
+        width: 95%;
+        padding: 8px;
+        bottom: 15px;
+    }
+
+    .sidepanel-menu {
+        gap: 6px;
+    }
+
+    .sidepanel-menu a {
+        padding: 8px 12px;
+        font-size: 0.85em;
+        gap: 8px;
+    }
+    
+    .sidepanel-menu a i {
+        font-size: 0.9em;
+    }
+}
+
+/* Teléfonos muy pequeños */
+@media screen and (max-width: 375px) {
+    .sidepanel-nav {
+        width: 98%;
+        padding: 5px;
+        bottom: 10px;
+    }
+
+    .sidepanel-menu a {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        gap: 6px;
+    }
+    
+    /* Ocultar texto en pantallas muy pequeñas si es necesario */
+    .sidepanel-menu a span.menu-text {
+        display: none; /* Opcional: oculta el texto y deja solo iconos */
+    }
+    
+    /* Si decides ocultar el texto, haz que los iconos sean un poco más grandes */
+    .sidepanel-menu a.icon-only i {
+        font-size: 1.1em;
+    }
+}
+
 /* ==========================================================================
-   hasta acá excelente
+   Main Section Styles - Creative Minimalist
    ========================================================================== */
-/* ==========================================================================
- Main Section Styles
- ========================================================================== */
- main {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1004,13 +1077,15 @@ Side Panel Navigation Styles
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Adjusted justify-content */
+    justify-content: flex-start;
     padding: 2rem;
     margin: 0 auto;
     transition: all var(--transition-base);
     z-index: 1;
     width: 100%;
     position: relative;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
 }
 
 /* Responsive Styles */
@@ -1021,7 +1096,6 @@ Side Panel Navigation Styles
 
     .main-wrapper {
         padding: 1rem;
-
     }
 }
 
@@ -1058,7 +1132,7 @@ content-container Styles - Responsive
 
 .content-container {
   flex: 1;
-  max-width: 85%;
+  max-width: 200%;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   margin-top: -2.50rem;
@@ -1165,209 +1239,19 @@ content-container Styles - Responsive
       padding: 1rem;
   }
 }
-
 /* ==========================================================================
-   Project Section Styles
-   ========================================================================== */
-   #proyectos {
+Project Section Styles - Creative Minimalist
+========================================================================== */
+#proyectos {
     max-width: 1200px;
     position: relative;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 60px 0;  /* Aumenté el padding para un aspecto más aireado */
     margin: 3rem auto;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.02); /* Fondo muy sutil */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra sutil */
-    will-change: transform; /* Optimización de rendimiento */
-}
-
-#proyectos .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px;
-    padding: 50px;
-    position: relative;
-    z-index: 2;
-}
-
-
-#proyectos h2 {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: left;
-  position: relative;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    will-change: transform;
     z-index: 1;
-    padding-left: 50px;  
-    margin-top: 40px;
 }
 
-#proyectos h2::before {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0; /* Start from the left */
-    width: 30px;
-    height: 2px;
-    background: linear-gradient(to right, var(--color-accent), transparent);
-    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
-}
-
-#proyectos:hover h2::before {
-    width: 70px; /* Expand on hover */
-}
-
-.project-item {
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 10px; /* Ajuste de borde */
-    overflow: hidden;
-     box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s ease; /* Transición más suave */
-    position: relative;
-    backdrop-filter: blur(20px);
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transform-style: preserve-3d; /* Enable 3D transforms */
-    will-change: transform; /* Optimización de rendimiento */
-}
-
-.project-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 45%, transparent 100%); /* Ajuste sutil */
-    pointer-events: none;
-    opacity: 0.5;
-    transition: opacity 0.6s ease-in-out;
-}
-
-
-.project-item:hover::before {
-    opacity: 0.7;
-}
-
-
-.project-item .layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición suave */
-  background: inherit;
-}
-
-.project-item .layer:nth-child(2) {
-  z-index: 2;
-    transform: translateZ(15px);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 65%, transparent);
-}
-
-.project-item .layer:nth-child(3) {
-  z-index: 3;
-  transform: translateZ(30px);
- background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 65%, transparent 100%);
-
-}
-.project-item:hover .layer {
-    transform: translateZ(0); /* Return layers to initial position on hover */
-}
-
-.project-item .image-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 25px;
-    overflow: hidden;
-     transform-style: preserve-3d; /* Enable 3D transforms */
-}
-
-.project-item img {
-    width: 100%;
-    max-height: 230px; /* Ajuste de altura */
-    object-fit: cover;
-    border-radius: 20px; /* Ajuste de borde */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.7s ease;
-    display: block;
-    transform: translateZ(20px);
-}
-
-.project-item:hover img {
-    transform: translateZ(0) scale(1.05);
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1), 0 0 8px var(--color-text);
-}
-
-.project-item h3 {
-    color: var(--color-secondary);
-    font-size: 1.8rem; /* Mayor tamaño */
-    margin-bottom: 15px;
-    text-shadow: 0 0 4px var(--color-text);
-    position: relative;
-    display: inline-block;
-    font-weight: 500;
-    transform: translateZ(25px);
-}
-
-.project-item h3::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -7px; /* Ajuste de posición */
-    width: 100%;
-    height: 3px;
-     background: linear-gradient(to right, var(--color-secondary), transparent); /* Degradado sutil */
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición más suave */
-}
-
-.project-item:hover h3::before {
-    transform: scaleX(1);
-}
-
-.project-item p {
-    margin-bottom: 30px;
-    color: var(--color-text);
-    font-size: 1.1rem; /* Mayor tamaño */
-    line-height: 1.7;
-    transform: translateZ(25px);
-}
-
-.project-item .project-actions {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    transform: translateZ(25px);
-}
-
-.project-item .project-actions button {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #fff;
-    background: rgba(0, 191, 255, 0.1);
-    border: 1.5px solid rgba(0, 191, 255, 0.06);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
-    transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease; /* Transición más suave */
-    cursor: pointer;
-}
-
-.project-item .project-actions button:hover {
-    background: rgba(0, 191, 255, 0.2); /* Ajuste de background */
-    color: var(--color-secondary);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-}
-
-/* Parallax Background */
 #proyectos::before {
     content: '';
     position: absolute;
@@ -1377,12 +1261,13 @@ content-container Styles - Responsive
     height: 100%;
     pointer-events: none;
     z-index: 1;
-   transform: translateY(-15px); /* Ajuste de parallax */
+    transform: translateY(-15px);
     transition: transform 0.7s ease-out;
     background-image: url('./assets/css/images/dots.svg');
-    opacity: .4;
-     background-repeat: repeat;
+    opacity: 0.4;
+    background-repeat: repeat;
 }
+
 #proyectos::after {
     content: '';
     position: absolute;
@@ -1392,10 +1277,8 @@ content-container Styles - Responsive
     height: 200%;
     pointer-events: none;
     z-index: 0;
-     animation: rotateBackground 50s linear infinite;
+    animation: rotateBackground 50s linear infinite;
     opacity: 0.5;
-     background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
-
 }
 
 @keyframes rotateBackground {
@@ -1406,124 +1289,294 @@ content-container Styles - Responsive
         transform: rotate(360deg);
     }
 }
-/* Media Queries for Responsiveness */
 
+#proyectos .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;  /* Reduje un poco el espacio entre elementos */
+    padding: 40px; /* Reduje un poco el padding general */
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Title */
+#proyectos h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin */
+    font-size: 2.2rem; /* Reduced font size */
+    color: #e0e0e0; /* Lighter text color */
+    font-weight: 400; /* Even lighter font weight */
+    letter-spacing: -0.2px;
+    text-shadow: none; /* Removed text shadow */
+}
+
+#proyectos h2:after {
+    content: '';
+    display: block;
+    width: 30px; /* Even shorter line */
+    height: 1px; /* Thinner line */
+    background: #9e9e9e; /* Solid gray color */
+    margin: 8px auto 0;
+    border-radius: 1px;
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.02); /* Ajuste leve de transparencia */
+    border-radius: 16px; /* Esquinas más redondeadas */
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);  /* Sutil sombra */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Transición más suave */
+    position: relative;
+    backdrop-filter: blur(15px); /* Ajuste del blur */
+    padding: 25px; /* Padding interno reducido */
+    border: 1px solid rgb(255, 255, 255);  /* Borde muy sutil */
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 45%, transparent 100%);
+    pointer-events: none;
+    opacity: 0.4;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.project-item:hover::before {
+    opacity: 0.6;
+}
+
+.project-item .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease-in-out;
+    background: inherit;
+}
+
+.project-item .layer:nth-child(2) {
+    z-index: 2;
+    transform: translateZ(12px);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 65%, transparent);
+}
+
+.project-item .layer:nth-child(3) {
+    z-index: 3;
+    transform: translateZ(24px);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 65%, transparent 100%);
+}
+
+.project-item:hover .layer {
+    transform: translateZ(0);
+}
+
+.project-item .image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.project-item img {
+    width: 100%;
+    max-height: 200px; /* Ajuste altura */
+    object-fit: cover;
+    border-radius: 16px;  /* Más redondeado */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    display: block;
+    transform: translateZ(16px);
+}
+
+.project-item:hover img {
+    transform: translateZ(0) scale(1.03);  /* Acercamiento sutil */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08), 0 0 6px var(--color-text);
+}
+
+.project-item h3 {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    text-shadow: 0 0 4px var(--color-text);
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    transform: translateZ(20px);
+}
+
+.project-item h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-secondary), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project-item:hover h3::before {
+    transform: scaleX(1);
+}
+
+.project-item p {
+    margin-bottom: 25px;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    transform: translateZ(20px);
+}
+
+.project-item .project-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    transform: translateZ(20px);
+}
+
+.project-item .project-actions button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ffffff;
+    background: rgba(0, 191, 255, 0.1);
+    border: 1.5px solid rgba(0, 191, 255, 0.06);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project-item .project-actions button:hover {
+    background: rgba(0, 191, 255, 0.2);
+    color: var(--color-secondary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 992px) {
-     #proyectos {
-        padding: 120px 0;
+    #proyectos {
+        padding: 50px 0;
     }
     #proyectos .project-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px;
-        padding: 40px;
-    }
-     #proyectos h2 {
-        font-size: 2.2rem;
-        margin-bottom: -2rem;
-       top: -3.5rem;
-       left: 40px;
-    }
-     #proyectos h2::after {
-         bottom: -9px;
-        width: 45px;
-    }
-     .project-item {
-        padding: 25px;
-    }
-      .project-item img {
-        max-height: 200px;
-    }
-    .project-item h3 {
-       font-size: 1.6rem;
-    }
-    .project-item p {
-      font-size: 1rem;
-    }
-      .project-item .project-actions button {
-         padding: 12px 25px;
-          font-size: 1rem;
-       }
-}
-
-
-@media (max-width: 768px) {
-   #proyectos {
-        padding: 100px 0;
-    }
-    #proyectos .project-grid {
-         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-         gap: 35px;
+        gap: 35px;
         padding: 35px;
     }
-     #proyectos h2 {
-        font-size: 2rem;
-        margin-bottom: -1.5rem;
-      top: -3rem;
-      left: 30px;
+    #proyectos h2 {
+        font-size: 1.4rem;
+        margin-bottom: -1.8rem;
+        top: -3.2rem;
+        left: 35px;
     }
-      #proyectos h2::after {
+    #proyectos h2::after {
         bottom: -8px;
-       width: 40px;
+        width: 40px;
     }
-     .project-item {
+    .project-item {
         padding: 20px;
     }
-      .project-item img {
+    .project-item img {
         max-height: 180px;
     }
     .project-item h3 {
-       font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     .project-item p {
-      font-size: 0.95rem;
+        font-size: 0.95rem;
     }
-     .project-item .project-actions button {
-        padding: 10px 20px;
-         font-size: 0.95rem;
-       }
+    .project-item .project-actions button {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
 }
 
-@media (max-width: 500px) {
-     #proyectos {
-       padding: 80px 0;
+@media (max-width: 768px) {
+    #proyectos {
+        padding: 40px 0;
     }
-      #proyectos .project-grid {
-           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-         gap: 30px;
+    #proyectos .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
         padding: 30px;
     }
     #proyectos h2 {
-        font-size: 1.8rem;
-        margin-bottom: -1rem;
-         top: -2.5rem;
-        left: 25px;
+        font-size: 1.3rem;
+        margin-bottom: -1.5rem;
+        top: -2.8rem;
+        left: 30px;
     }
-      #proyectos h2::after {
-       bottom: -7px;
-       width: 35px;
+    #proyectos h2::after {
+        bottom: -7px;
+        width: 35px;
     }
     .project-item {
-        padding: 15px;
+        padding: 18px;
     }
     .project-item img {
         max-height: 160px;
     }
     .project-item h3 {
-      font-size: 1.3rem;
-        margin-bottom: 12px;
+        font-size: 1.2rem;
     }
     .project-item p {
         font-size: 0.9rem;
     }
-      .project-item .project-actions button {
-       padding: 8px 18px;
-         font-size: 0.9rem;
-       }
+    .project-item .project-actions button {
+        padding: 9px 20px;
+        font-size: 0.9rem;
+    }
 }
 
-/* ==========================================================================
- Habilidades Section Styles
-========================================================================== */
+@media (max-width: 500px) {
+    #proyectos {
+        padding: 30px 0;
+    }
+    #proyectos .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 25px;
+    }
+    #proyectos h2 {
+        font-size: 1.2rem;
+        margin-bottom: -1.2rem;
+        top: -2.2rem;
+        left: 25px;
+    }
+    #proyectos h2::after {
+        bottom: -6px;
+        width: 30px;
+    }
+    .project-item {
+        padding: 14px;
+    }
+    .project-item img {
+        max-height: 140px;
+    }
+    .project-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .project-item p {
+        font-size: 0.85rem;
+    }
+    .project-item .project-actions button {
+        padding: 7px 16px;
+        font-size: 0.85rem;
+    }
+}
 /* ==========================================================================
    Habilidades Section Styles - Creative Minimalist
    ========================================================================== */
@@ -1532,456 +1585,665 @@ content-container Styles - Responsive
     margin: 4rem auto;
     padding: 4rem 3rem;
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Light shadow */
-    backdrop-filter: blur(12px);
+    /*background-color: rgba(255, 255, 255, 0.02);*/
+    /*border-radius: 16px;*/
+    /*box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);*/
+    /*backdrop-filter: blur(12px);*/
     position: relative;
     overflow: hidden;
     margin-top: -80px;
-      will-change: transform;
+    will-change: transform;
     z-index: 1;
-  }
-  
-  #habilidades::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-       border-radius: inherit;
-       background: linear-gradient(150deg, rgba(255, 255, 255, 0.03), transparent);
-       pointer-events: none;
-       opacity: 0.25;
-      z-index: -1;
-  }
-  
-  
-  #habilidades h2 {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 2.5rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-align: left;
+    /*border: 1px solid rgba(255, 255, 255, 0.1);*/
+}
+
+#habilidades::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*border-radius: inherit;*/
+    /*background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent);*/
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Section Title */
+#habilidades h2 {
+    text-align: center;
+    margin-bottom: 25px; /* Reduced margin */
+    font-size: 2.2rem; /* Reduced font size */
+    color: #e0e0e0; /* Lighter text color */
+    font-weight: 400; /* Even lighter font weight */
+    letter-spacing: -0.2px;
+    text-shadow: none; /* Removed text shadow */
+    /* position: flex;  Esto no tiene sentido en h2.  Dejarlo comentado o eliminarlo. */
+}
+
+#habilidades h2:after {
+    content: '';
+    display: block;
+    width: 30px; /* Even shorter line */
+    height: 1px; /* Thinner line */
+    background: #9e9e9e; /* Solid gray color */
+    margin: 8px auto 0;
+    border-radius: 1px;
+}
+
+.skills-container {
+    padding: 2rem;
     position: relative;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-      z-index: 1;
-  }
-  
-  #habilidades h2::before {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0; /* Start from the left */
-      width: 30px;
-      height: 2px;
-      background: linear-gradient(to right, var(--color-accent), transparent);
-      transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
-  }
-  
-  #habilidades:hover h2::before {
-      width: 70px; /* Expand on hover */
-  }
-  
-  
-  .skills-container {
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-  }
-  
-  /* Skill Card Grid - Asymmetrical */
-  .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 1.8rem;
-      padding: 1.2rem;
-      position: relative;
-      z-index: 1;
-      justify-items: stretch;
-  }
-  
-  /* Skill Card Styles */
-  .skill-card {
+    z-index: 1;
+}
+
+/* Skill Card Grid - Minimalist and Creative */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.8rem;
+    padding: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Skill Card Styles */
+.skill-card {
     background: rgba(255, 255, 255, 0.03);
-    padding: 1.4rem;
-    border-radius: 10px;
+    padding: 1.6rem;
+    border-radius: 12px;
     text-align: center;
     color: var(--color-text);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
-      position: relative;
-      overflow: hidden;
-      will-change: transform, box-shadow;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform-style: preserve-3d;
-  }
-  
-  .skill-card:hover {
-      transform: translateY(-0.5rem) translateZ(0.7rem);
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
-      background: rgba(255, 255, 255, 0.04);
-  }
-  
-  .skill-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.01), transparent 50%, rgba(255, 255, 255, 0.02));
-      pointer-events: none;
-      opacity: 0;
-       transition: opacity 0.4s ease;
-  }
-  .skill-card:hover::before {
-     opacity: 0.5;
-  }
-  
-  .skill-card img {
-      max-width: 40%;
-      max-height: 60%;
-      display: block;
-      margin: auto;
-     transform: translateZ(15px);
-      transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  
-  .skill-card:hover img {
-     transform: translateZ(0) scale(1.05);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-    #habilidades {
-          max-width: 900px;
-          padding: 3.5rem 2.5rem;
-      }
-     #habilidades h2 {
-          font-size: 1.9rem;
-          margin-bottom: 2.3rem;
-      }
-        .skill-grid {
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1.6rem;
-           padding: 1.1rem;
-        }
-        .skill-card {
-            padding: 1.2rem;
-        }
-  }
-  
-  @media (max-width: 768px) {
-      #habilidades {
-          max-width: 700px;
-          padding: 3rem 2rem;
-          margin-top: -60px;
-      }
-       #habilidades h2 {
-           font-size: 1.7rem;
-           margin-bottom: 2rem;
-      }
-       #habilidades h2::before {
-            width: 25px;
-      }
-      #habilidades:hover h2::before {
-           width: 60px;
-      }
-         .skill-grid {
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 1.4rem;
-             padding: 1rem;
-         }
-      .skill-card {
-            padding: 1rem;
-      }
-  }
-  
-  @media (max-width: 500px) {
-    #habilidades {
-       max-width: 90%;
-        padding: 2.5rem 1.5rem;
-         margin-top: -40px;
-      }
-        #habilidades h2 {
-             font-size: 1.6rem;
-            margin-bottom: 1.8rem;
-        }
-        #habilidades h2::before {
-            width: 20px;
-        }
-          #habilidades:hover h2::before {
-              width: 50px;
-      }
-        .skill-grid {
-            grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
-            gap: 1.2rem;
-           padding: 0.8rem;
-         }
-        .skill-card {
-              padding: 0.8rem;
-         }
-  }
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgb(255, 255, 255);
+}
 
+.skill-card:hover {
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent 60%, rgba(255, 255, 255, 0.03));
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-card img {
+    max-width: 50%;
+    max-height: 50%;
+    display: block;
+    margin: 0 auto 1rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.skill-card:hover img {
+    transform: scale(1.1);
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-top: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    #habilidades {
+        max-width: 900px;
+        padding: 3.5rem 2.5rem;
+    }
+    #habilidades h2 {
+        font-size: 2rem;
+        margin-bottom: 2.3rem;
+    }
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 1.6rem;
+        padding: 1.1rem;
+    }
+    .skill-card {
+        padding: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #habilidades {
+        max-width: 700px;
+        padding: 3rem 2rem;
+        margin-top: -60px;
+    }
+    #habilidades h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    #habilidades h2::after {
+        width: 30px;
+    }
+    #habilidades:hover h2::after {
+        width: 60px;
+    }
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.4rem;
+        padding: 1rem;
+    }
+    .skill-card {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #habilidades {
+        max-width: 90%;
+        padding: 2.5rem 1.5rem;
+        margin-top: -40px;
+    }
+    #habilidades h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.8rem;
+    }
+    #habilidades h2::after {
+        width: 25px;
+    }
+    #habilidades:hover h2::after {
+        width: 50px;
+    }
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1.2rem;
+        padding: 0.8rem;
+    }
+    .skill-card {
+        padding: 1rem;
+    }
+}
 /* ==========================================================================
- Education Section Styles
- ========================================================================== */
-/* Estilos para la seccion de educacion*/
-/* ==========================================================================
-  Education Section Styles - Enhanced Layout
-  ========================================================================== */
-/* Estilos generales para la sección de educación */
-#education-section {
-  padding: 40px 20px;
-  width: 780px;
-  margin-top: -100px;
-  background: rgba(255, 255, 255, 0.02); /* Fondo muy sutil */
-  border-radius: 10px;
+   Education Section - Ultra Minimalist
+   ========================================================================== */
+   #education-section {
+    padding: 80px 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Eliminado para quitar el cuadro exterior */
+    margin-top: -80px;
 }
 
 .section-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-  color: #333;
-  font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem; /* Reduced font size */
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: -1px;
 }
-.section-subtitle{
-   text-align: center;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #333;
-   font-weight: bold;
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
 }
+
 .education-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* Espacio entre la timeline y los certificados */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #education-section {
+        padding: 60px 15px;
+    }
 
-/* Estilos del Timeline */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .section-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .education-wrapper {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    #education-section {
+        padding: 40px 10px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .education-wrapper {
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   Timeline Styles - Ultra Minimalist
+   ========================================================================== */
 .timeline-container {
-  width: 100%;
-  position: relative; /* Para el posicionamiento del línea vertical */
-  padding-left: 60px; /* Espacio para la línea vertical y los puntos */
+    width: 100%;
+    position: relative;
+    padding-left: 40px;
 }
 
 .timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 25px; /* Centrar la línea vertical */
-  width: 2px;
-  background-color: #ddd;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 1px;
+    background: rgba(29, 26, 184, 0.849);
 }
 
 .timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .timeline-item {
-  margin-bottom: 20px;
-  position: relative;
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 21px;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-  background-color: #ddd; /* Color de los puntos */
-  border-radius: 50%;
-  z-index: 1;
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .timeline-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-   border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-  position: relative;
-  display: flex; /* Para alinear icono y texto */
-  align-items: center;
-  gap: 20px; /* Espacio entre icono y texto */
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .timeline-content .icon {
-  font-size: 2.5rem;
-   color: #555;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
 }
-.timeline-content .text{
-  flex-grow: 1;
+
+.timeline-content .text {
+    flex-grow: 1;
 }
+
 .timeline-content .text p:first-child {
-  font-weight: 600;
-  margin-bottom: 5px;
-   color: #333;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 1.1rem;
 }
+
 .timeline-content .text p {
-  color: #555;
-   font-size: 0.9rem;
-  margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0;
 }
-.timeline-content .year{
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  font-size: 0.8rem;
-  color: #888;
-  padding: 4px 8px;
-   background-color: #f0f0f0;
-   border-radius: 4px;
+
+.timeline-content .year {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
 }
+
 .timeline-content.current {
-  background-color: #e0f7fa; /* Un color más suave */
-}
-.timeline-content .current-label{
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-   font-size: 0.8rem;
-   padding: 4px 8px;
-   border-radius: 4px;
-  background-color: #b2ebf2;
-   color: #0077b6;
-}
-/* Estilos del Carrusel de Certificados */
-.certificates-container {
-  margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
-.certificates-carousel {
-  overflow: hidden;
-  position: relative;
-  max-width: 100%; /* Ajustado para evitar que se salga del contenedor */
+.timeline-content .current-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
 }
 
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease;
+/* ==========================================================================
+Certificates Section Styles - Modern and Attractive
+========================================================================== */
+/* General Section Styles */
+#certificates-section {
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 900px; /* Slightly reduced max-width */
+    margin: 0 auto 40px;
+    background: transparent; /* Completely transparent background */
+    border-radius: 12px;
+    /* Removed backdrop-filter and border */
+    box-shadow: none; /* Removed box-shadow */
+    transition: all 0.3s ease;    
 }
 
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 25px; /* Reduced margin */
+    font-size: 2.4rem; /* Reduced font size */
+    color: #e0e0e0; /* Lighter text color */
+    font-weight: 400; /* Even lighter font weight */
+    letter-spacing: -0.2px;
+    text-shadow: none; /* Removed text shadow */
+    position: flex;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 30px; /* Even shorter line */
+    height: 1px; /* Thinner line */
+    background: #9e9e9e; /* Solid gray color */
+    margin: 8px auto 0;
+    border-radius: 1px;
+}
+
+/* Carousel Styles */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px; /* Reduced gap */
+    padding: 10px 3px; /* Reduced padding */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+}
+
+/* Hide scrollbar in Chrome/Safari */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Carousel Slide */
 .carousel-slide {
-  flex: 0 0 30%; /* Ajustado el ancho de los slides */
-  padding: 10px;
-  box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 200px; /* Further reduced slide width */
+    background: #263238; /* Darker slide background */
+    border-radius: 8px; /* Even softer corners */
+    padding: 12px; /* Further reduced padding */
+    text-align: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    box-shadow: none; /* Removed box-shadow */
+    cursor: pointer;
+    border: none; /* Removed border */
+    position: relative;
+    overflow: hidden;
+    opacity: 0.8; /* Slightly translucent */
 }
 
-.certificate-card {
-background-color: white;
-  padding: 10px;
-  border-radius: 8px;
-   border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.certificate-card:hover {
-  transform: scale(1.03); /* Ligero efecto de zoom al pasar el cursor */
+.carousel-slide:hover {
+    transform: translateY(-4px) scale(1.01); /* Even subtler hover effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Very subtle shadow on hover */
+    background: #37474f; /* Darker background on hover */
+    opacity: 1; /* Fully opaque on hover */
 }
 
-
-.certificate-card img {
-  max-width: 100%;
-   height: auto;
-  margin-bottom: 10px;
-  display: block;
-}
-.certificate-card p {
-  font-size: 0.9rem;
-  text-align: center;
-  margin: 0;
-   color: #555;
+.carousel-slide:active {
+    transform: translateY(-2px) scale(0.99);
 }
 
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+/* Image Styles */
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px; /* Reduced margin */
+    box-shadow: none; /* Removed box-shadow */
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    filter: grayscale(80%); /* Apply grayscale filter */
 }
 
-.carousel-dots span {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
+.carousel-slide:hover img {
+    transform: scale(1.03);
+    filter: grayscale(0%); /* Remove grayscale on hover */
 }
 
-.carousel-dots span.active {
-  background-color: #777;
+/* Certificate Title */
+.certificate-title {
+    font-size: 0.9rem;
+    color: #cfd8dc; /* Lighter color */
+    margin-bottom: 5px;
+    font-weight: 400;
+    text-shadow: none;
+    transition: color 0.3s ease;
 }
 
-/* Estilos del Modal */
+.carousel-slide:hover .certificate-title {
+    color: #fff; /* White title on hover */
+}
+
+/* Certificate Description */
+.certificate-description {
+    font-size: 0.8rem;
+    color: #90a4ae;
+    text-shadow: none;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.carousel-slide:hover .certificate-description {
+    color: #bdbdbd;
+}
+
+/* ---------------------------------------------- */
+/* Modal Styles (Ultra-Minimalist) */
+/* ---------------------------------------------- */
+
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6); /* More transparent */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    backdrop-filter: blur(6px); /* Apply a blur to the background */
+    -webkit-backdrop-filter: blur(6px); /* For Safari */
+}
+
+.modal.active {
+    opacity: 1;
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
+    background-color: rgba(40, 40, 45, 0.85); /* Darker modal */
+    margin: auto;
+    padding: 15px; /* Reduced padding */
+    border: none;
+    width: 90%;
+    max-width: 600px; /* Reduced max-width */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Slightly less intense shadow */
+    transform: scale(0.97); /* Subtler entrance */
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    max-height: 80vh; /* Reduced max-height */
+    overflow: auto;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
 }
 
 .modal-content img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    max-height: 70vh; /* Further reduced height */
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
 }
 
-.close-modal {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  background: none;
+.close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: rgba(255, 255, 255, 0.5); /* Even less opaque */
+    font-size: 24px; /* Further reduced size */
+    font-weight: bold;
+    transition: all 0.2s ease;
+    z-index: 10;
+    width: 30px; /* Further reduced size */
+    height: 30px; /* Further reduced size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
 }
-.close-modal:hover, .close-modal:focus{
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+
+.close:hover,
+.close:focus {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05); /* Even subtler hover */
+    text-decoration: none;
+    cursor: pointer;
+    transform: rotate(90deg);
 }
-/* Ajustes para pantallas pequeñas */
+
+/* ---------------------------------------------- */
+/* Responsive Styles (Refined) */
+/* ---------------------------------------------- */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+    }
+
+    .carousel-slide {
+        width: 180px;
+    }
+}
+
+/* Small Devices (Phones) */
 @media (max-width: 768px) {
-   .timeline-container {
-     padding-left: 40px;
-   }
-   .timeline-item::before {
-       left: 19px;
-   }
-  .carousel-slide {
-      flex: 0 0 100%; /* Cambia a una columna en pantallas pequeñas */
-  }
+    #certificates-section {
+        padding: 30px 10px;
+        margin-bottom: 35px;
+    }
+
+    .carousel {
+        gap: 8px;
+        padding: 8px 2px;
+    }
+
+    .carousel-slide {
+        width: 150px;
+        padding: 10px;
+    }
+
+    .certificate-title {
+        font-size: 0.85rem;
+        margin-bottom: 3px;
+    }
+
+    .certificate-description {
+        font-size: 0.75rem;
+    }
+
+    .modal-content {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .close {
+        top: 6px;
+        right: 8px;
+        font-size: 22px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .carousel {
+        gap: 6px;
+        padding: 6px 1px;
+    }
+
+    .carousel-slide {
+        width: 130px;
+        padding: 8px;
+    }
 }
 /* ==========================================================================
  Contact Form Styles
@@ -1997,7 +2259,7 @@ background-color: white;
   border: 1px solid rgba(0, 191, 255, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  margin-top: -230px;
+  margin-top: 10px;
 }
 
 /* Elegant Background Effect */
