@@ -9,7 +9,7 @@
     <section id="contactame" class="content-section">
         <h2>Contáctame</h2>
         <div class="contact-container">
-            <form id="contactForm">
+            <form id="contactForm" method="POST">  <!-- AÑADIDO method="POST" -->
                 <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required>
@@ -22,37 +22,32 @@
                     <label for="message">Mensaje:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn-hover-effect">Enviar Mensaje</button>
+                <button type="submit" class="btn-hover-effect" id="submitButton">Enviar Mensaje</button>
             </form>
         </div>
     </section>
 
     <script>
-        // Inicializar EmailJS
-        (function() {
-            emailjs.init("eiaRBfy6I2Dacouy4");
-            console.log("EmailJS inicializado correctamente");
-        })();
-
-        // Agregar el event listener cuando el DOM esté cargado
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                console.log("Formulario enviado");
+            emailjs.init("eiaRBfy6I2Dacouy4");
+            console.log("EmailJS inicializado correctamente.");
 
-                // Obtener los valores del formulario
+            const contactForm = document.getElementById('contactForm');
+            const button = document.getElementById('submitButton');
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();  // Asegúrate de que esto está presente
+                console.log("Formulario enviado.");
+
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const message = document.getElementById('message').value;
 
                 console.log("Valores del formulario:", { name, email, message });
 
-                // Deshabilitar el botón
-                const button = this.querySelector('button');
                 button.disabled = true;
                 button.textContent = 'Enviando...';
 
-                // Preparar los parámetros del template
                 const templateParams = {
                     to_name: "Admin",
                     from_name: name,
@@ -62,18 +57,16 @@
 
                 console.log("Enviando email con parámetros:", templateParams);
 
-                // Enviar el email
                 emailjs.send('service_kkudgzm', 'template_n7qtgrj', templateParams)
                     .then(function(response) {
-                        console.log('ÉXITO:', response);
+                        console.log('SUCCESS!', response.status, response.text);
                         alert('¡Mensaje enviado con éxito!');
-                        document.getElementById('contactForm').reset();
+                        contactForm.reset();
+                    }, function(error) {
+                        console.error('FAILED...', error);
+                        alert('Error al enviar el mensaje.  Por favor, intenta de nuevo más tarde.  Detalles del error en la consola.');
                     })
-                    .catch(function(error) {
-                        console.error('ERROR:', error);
-                        alert('Error al enviar el mensaje. Por favor, revisa la consola para más detalles.');
-                    })
-                    .finally(function() {
+                    .finally(() => {
                         button.disabled = false;
                         button.textContent = 'Enviar Mensaje';
                     });
