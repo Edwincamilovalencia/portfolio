@@ -1969,106 +1969,94 @@ Certificates Section Styles - Modern and Attractive
 /* General Section Styles */
 #certificates-section {
     padding: 10px 15px;
-    width: 100%;
-    max-width: 900px; /* Slightly reduced max-width */
+    width: 110%;
+    max-width: 900px;
     margin: 0 auto 40px;
-    background: transparent; /* Completely transparent background */
+    background: transparent;
     border-radius: 12px;
-    /* Removed backdrop-filter and border */
-    box-shadow: none; /* Removed box-shadow */
-    transition: all 0.3s ease;    
+    box-shadow: none;
+    transition: all 0.3s ease;
 }
 
-/* Section Title */
 .section-title {
     text-align: center;
-    margin-bottom: 25px; /* Reduced margin */
-    font-size: 2.4rem; /* Reduced font size */
-    color: #e0e0e0; /* Lighter text color */
-    font-weight: 400; /* Even lighter font weight */
+    margin-bottom: 25px;
+    font-size: 2.4rem;
+    color: #e0e0e0;
+    font-weight: 400;
     letter-spacing: -0.2px;
-    text-shadow: none; /* Removed text shadow */
-    position: flex;
+    text-shadow: none;
 }
 
 .section-title:after {
     content: '';
     display: block;
-    width: 30px; /* Even shorter line */
-    height: 1px; /* Thinner line */
-    background: #9e9e9e; /* Solid gray color */
+    width: 30px;
+    height: 1px;
+    background: #9e9e9e;
     margin: 8px auto 0;
     border-radius: 1px;
 }
 
-/* Carousel Styles */
 .carousel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 12px; /* Reduced gap */
-    padding: 10px 3px; /* Reduced padding */
+    gap: 12px;
+    padding: 10px 3px;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* Hide scrollbar in Chrome/Safari */
 .carousel::-webkit-scrollbar {
     display: none;
 }
 
-/* Carousel Slide */
 .carousel-slide {
     flex: 0 0 auto;
-    width: 200px; /* Further reduced slide width */
-    background: #263238; /* Darker slide background */
-    border-radius: 8px; /* Even softer corners */
-    padding: 12px; /* Further reduced padding */
+    width: 200px;
+    background: #263238;
+    border-radius: 8px;
+    padding: 12px;
     text-align: center;
     scroll-snap-align: start;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.2s ease-in-out;
-    box-shadow: none; /* Removed box-shadow */
+    box-shadow: none;
     cursor: pointer;
-    border: none; /* Removed border */
+    border: none;
     position: relative;
     overflow: hidden;
-    opacity: 0.8; /* Slightly translucent */
+    opacity: 0.8;
 }
 
 .carousel-slide:hover {
-    transform: translateY(-4px) scale(1.01); /* Even subtler hover effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Very subtle shadow on hover */
-    background: #37474f; /* Darker background on hover */
-    opacity: 1; /* Fully opaque on hover */
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #37474f;
+    opacity: 1;
 }
 
-.carousel-slide:active {
-    transform: translateY(-2px) scale(0.99);
-}
-
-/* Image Styles */
 .carousel-slide img {
     max-width: 100%;
     height: auto;
     border-radius: 6px;
-    margin-bottom: 8px; /* Reduced margin */
-    box-shadow: none; /* Removed box-shadow */
+    margin-bottom: 8px;
+    box-shadow: none;
     transition: transform 0.3s ease;
     object-fit: cover;
     aspect-ratio: 4/3;
-    filter: grayscale(80%); /* Apply grayscale filter */
+    filter: grayscale(80%);
 }
 
 .carousel-slide:hover img {
     transform: scale(1.03);
-    filter: grayscale(0%); /* Remove grayscale on hover */
+    filter: grayscale(0%);
 }
 
-/* Certificate Title */
 .certificate-title {
     font-size: 0.9rem;
-    color: #cfd8dc; /* Lighter color */
+    color: #cfd8dc;
     margin-bottom: 5px;
     font-weight: 400;
     text-shadow: none;
@@ -2076,109 +2064,9 @@ Certificates Section Styles - Modern and Attractive
 }
 
 .carousel-slide:hover .certificate-title {
-    color: #fff; /* White title on hover */
+    color: #fff;
 }
 
-/* Certificate Description */
-.certificate-description {
-    font-size: 0.8rem;
-    color: #90a4ae;
-    text-shadow: none;
-    line-height: 1.3;
-    transition: color 0.3s ease;
-}
-
-.carousel-slide:hover .certificate-description {
-    color: #bdbdbd;
-}
-
-/* ---------------------------------------------- */
-/* Modal Styles (Ultra-Minimalist) */
-/* ---------------------------------------------- */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.6); /* More transparent */
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    backdrop-filter: blur(6px); /* Apply a blur to the background */
-    -webkit-backdrop-filter: blur(6px); /* For Safari */
-}
-
-.modal.active {
-    opacity: 1;
-}
-
-.modal-content {
-    background-color: rgba(40, 40, 45, 0.85); /* Darker modal */
-    margin: auto;
-    padding: 15px; /* Reduced padding */
-    border: none;
-    width: 90%;
-    max-width: 600px; /* Reduced max-width */
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Slightly less intense shadow */
-    transform: scale(0.97); /* Subtler entrance */
-    transition: transform 0.2s ease-in-out;
-    position: relative;
-    max-height: 80vh; /* Reduced max-height */
-    overflow: auto;
-}
-
-.modal.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 70vh; /* Further reduced height */
-    border-radius: 6px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    object-fit: contain;
-}
-
-.close {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    color: rgba(255, 255, 255, 0.5); /* Even less opaque */
-    font-size: 24px; /* Further reduced size */
-    font-weight: bold;
-    transition: all 0.2s ease;
-    z-index: 10;
-    width: 30px; /* Further reduced size */
-    height: 30px; /* Further reduced size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: transparent;
-}
-
-.close:hover,
-.close:focus {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.05); /* Even subtler hover */
-    text-decoration: none;
-    cursor: pointer;
-    transform: rotate(90deg);
-}
-
-/* ---------------------------------------------- */
-/* Responsive Styles (Refined) */
-/* ---------------------------------------------- */
-
-/* Medium Devices (Tablets) */
 @media (max-width: 1024px) {
     .section-title {
         font-size: 1.6rem;
@@ -2190,7 +2078,6 @@ Certificates Section Styles - Modern and Attractive
     }
 }
 
-/* Small Devices (Phones) */
 @media (max-width: 768px) {
     #certificates-section {
         padding: 30px 10px;
@@ -2211,24 +2098,8 @@ Certificates Section Styles - Modern and Attractive
         font-size: 0.85rem;
         margin-bottom: 3px;
     }
-
-    .certificate-description {
-        font-size: 0.75rem;
-    }
-
-    .modal-content {
-        padding: 15px;
-        border-radius: 8px;
-    }
-
-    .close {
-        top: 6px;
-        right: 8px;
-        font-size: 22px;
-    }
 }
 
-/* Extra Small Devices */
 @media (max-width: 480px) {
     .section-title {
         font-size: 1.4rem;
@@ -2243,353 +2114,6 @@ Certificates Section Styles - Modern and Attractive
     .carousel-slide {
         width: 130px;
         padding: 8px;
-    }
-}
-/* ==========================================================================
- Contact Form Styles
- ========================================================================== */
-#contactame {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(10, 10, 15, 0.8);
-  border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0, 191, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  margin-top: 10px;
-}
-
-/* Elegant Background Effect */
-#contactame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-      radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.08), transparent 30%),
-      radial-gradient(circle at 80%  80%, rgba(255, 215, 0, 0.08), transparent 30%);
-      opacity: 0.5;
-      z-index: -1;
-  }
-  
-  #contactame h2 {
-      font-size: 1.8rem;
-      color: #fff;
-      margin-bottom: 2rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      text-align: left;
-      position: relative;
-  }
-  
-  #contactame h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 2px;
-      background: var(--color-accent);
-      transition: width 0.3s ease;
-  }
-  
-  #contactame h2:hover::after {
-      width: 100px;
-  }
-  
-  #contactame .contact-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding-top: 1rem;
-  
-  }
-  #contactame form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-  }
-  
-  .form-group {
-      position: relative;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-      width: 100%;
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      color: #fff;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-  }
-  
-  .form-group textarea {
-      height: 100px;
-      resize: none;
-  }
-  
-  .form-group label {
-      position: absolute;
-      left: 0.8rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.85rem;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      background: transparent;
-  }
-  
-  .form-group textarea + label {
-      top: 1rem;
-      transform: none;
-  }
-  
-  /* Input Focus & Fill States */
-  .form-group input:focus + label,
-  .form-group textarea:focus + label,
-  .form-group input:not(:placeholder-shown) + label,
-  .form-group textarea:not(:placeholder-shown) + label {
-      top: -0.5rem;
-      left: 0.5rem;
-      font-size: 0.75rem;
-      color: var(--color-accent);
-      background: rgba(10, 10, 15, 0.8);
-      padding: 0 0.5rem;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-      border-color: var(--color-accent);
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
-  }
-  
-  /* Modern Submit Button */
-  #contactame button {
-      padding: 0.8rem 2rem;
-      background: transparent;
-      border: 1px solid var(--color-accent);
-      color: var(--color-accent);
-      border-radius: 8px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      margin-top: 0.5rem;
-  }
-
-  #contactame button::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--color-accent);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-    z-index: -1;
-}
-
-#contactame button:hover {
-    color: #000;
-}
-
-#contactame button:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Placeholder Styles */
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: transparent;
-}
-
-/* Focus Ring Removal */
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-}
-
-/* Hover Effects */
-.form-group:hover input,
-.form-group:hover textarea {
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Success Animation */
-@keyframes success {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-.form-success {
-    animation: success 0.3s ease;
-}
-.skills-container{
-     padding: 1.875rem;
-    text-align: center;
-}
-
-/* ==========================================================================
-   Responsive Adjustments
-   ========================================================================== */
-
-@media (max-width: 768px) {
-    nav {
-        display: block;
-    }
-
-    nav a {
-        display: block;
-    }
-
-    /* Adjustments for Project Grid on small screens*/
-    #proyectos .project-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .project-item {
-        flex: 0 1 auto;
-        min-width: auto;
-        max-width: 95%;
-        align-items: flex-start;
-    }
-     /* Adjustments for First Project Card*/
-    .project-item.featured {
-       grid-template-columns: 1fr;
-       text-align: center;
-       padding: 15px;
-       gap: 10px;
-       max-width: 95%;
-    }
-
-     .project-item.featured .project-content {
-        padding-left: 0;
-    }
-
-     .project-item.featured img {
-        max-height: 200px;
-        margin-bottom: 10px;
-    }
-     .project-item.featured h3 {
-        font-size: 1.7rem;
-        margin-bottom: 8px;
-    }
-
-     .project-item.featured p {
-        font-size: 1rem;
-        margin-bottom: 12px;
-    }
-
-      .project-item.featured .project-actions{
-         margin-top: 10px;
-    }
-      .project-item.featured .project-actions button {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-     /* Adjustments for Education section on small screens*/
-    #educacion {
-        padding: 2rem;
-        
-    }
-
-    #educacion h2 {
-        font-size: 1.8rem;
-    }
-
-    .education-catalog {
-        padding: 1rem 0;
-    }
-
-    .catalog-card {
-        width: calc(50% - 12px);
-        height: 150px;
-    }
-     /* Adjustments for About Section on small screens*/
-
-
-    .nav-container {
-        width: 100%;
-        position: static;
-        top: 0;
-    }
-
-    .content-panel {
-        padding-right: 0;
-    }
-}
-/* Adjustments for Contact Form  on smaller screens */
-@media (max-width: 480px) {
-    #contactame {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-
-    #contactame h2 {
-        font-size: 1.5rem;
-    }
-
-     #contactame .contact-container {
-       padding-top: 0;
-       }
-    .form-group input,
-    .form-group textarea {
-        padding: 0.7rem;
-    }
-}
-
-/* Adjustments for larger screens */
-@media (min-width: 1440px) {
-    .contenedorAbout {
-        padding: 7.5rem 6.25rem;
-    }
-    .nav-container {
-        width: 25rem;
-        flex-basis: 25rem;
-    }
-
-    .nav-panel .about-section {
-        padding: 3.75rem 2.5rem;
-    }
-
-    .nav-panel ul {
-        margin-top: 2.5rem;
-    }
-
-    .content-panel {
-        padding-right: 2.5rem;
-    }
-
-    .content-section {
-        padding: 2.5rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .nav-panel .about-section {
-        padding: 2.5rem;
-    }
-
-    .nav-panel ul {
-        margin-top: 2.5rem;
-    }
-
-    .content-panel {
-        padding-right: 2.5rem;
-    }
-
-    .content-section {
-        padding: 2.5rem;
-        margin-bottom: 2.5rem;
     }
 }
 

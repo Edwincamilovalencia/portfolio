@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     
+    
 
 </head>
 <body>
@@ -34,8 +35,6 @@
                     <div class="content-section" id="education-section"></div>
                     <!-- Education Section -->
                     <div class="content-section" id="certificates-section"></div>
-                     <!-- Contact Section -->
-                    <div class="content-section" id="contact-container"></div>
                  </div>
             </div>
         </div>
@@ -74,11 +73,6 @@
          fetch('components/certificados.html')
             .then(response => response.text())
             .then(data => document.getElementById('certificates-section').innerHTML = data);
-
-        // Cargar la sección de contacto
-        fetch('components/contact.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('contact-container').innerHTML = data);
 
         // Cargar el footer
         fetch('components/footer.html')
