@@ -26,10 +26,12 @@ const CONFIG = {
     ],
     typingTexts: [
         'Ingeniero de Sistemas',
-        'Desarrollador Full Stack',
+        'Desarrollador Odoo 18',
         'Especialista en Python',
-        'Entusiasta de la IA',
-        'Creador de Soluciones'
+        'Creador de Chatbots IA',
+        'Automatización con n8n',
+        'Full Stack Developer',
+        'Certificado en AWS'
     ],
     typingSpeed: 100,
     typingDelay: 2000
@@ -555,11 +557,15 @@ function openCertModal(title, issuer, year, imagePath) {
     const modalImage = document.getElementById('cert-modal-image');
     const modalPdf = document.getElementById('cert-modal-pdf');
     const modalDownload = document.getElementById('cert-modal-download');
+    const modalLoading = document.getElementById('cert-modal-loading');
     
     if (modal && modalTitle && modalIssuer && modalYear && modalImage) {
         modalTitle.textContent = title;
         modalIssuer.textContent = issuer;
         modalYear.textContent = year;
+        
+        // Show loading spinner
+        if (modalLoading) modalLoading.style.display = 'flex';
         
         const isPdf = imagePath.toLowerCase().endsWith('.pdf');
         if (isPdf) {
@@ -569,12 +575,20 @@ function openCertModal(title, issuer, year, imagePath) {
             if (modalPdf) {
                 modalPdf.style.display = 'block';
                 modalPdf.src = `${imagePath}#view=fitH`;
+                modalPdf.onload = () => {
+                    if (modalLoading) modalLoading.style.display = 'none';
+                };
             }
             
             if (modalDownload) {
                 modalDownload.href = imagePath;
-                modalDownload.innerHTML = '<i class=\"fas fa-file-pdf\"></i><span>Ver PDF</span>';
+                modalDownload.innerHTML = '<i class=\"fas fa-file-pdf\"></i><span>Ver PDF completo</span>';
             }
+            
+            // Hide loading after a delay for PDFs
+            setTimeout(() => {
+                if (modalLoading) modalLoading.style.display = 'none';
+            }, 1500);
         } else {
             if (modalPdf) {
                 modalPdf.style.display = 'none';
@@ -587,7 +601,7 @@ function openCertModal(title, issuer, year, imagePath) {
             
             if (modalDownload) {
                 modalDownload.href = imagePath;
-                modalDownload.innerHTML = '<i class=\"fas fa-up-right-from-square\"></i><span>Abrir imagen</span>';
+                modalDownload.innerHTML = '<i class=\"fas fa-up-right-from-square\"></i><span>Abrir en nueva pestaña</span>';
             }
         }
         
