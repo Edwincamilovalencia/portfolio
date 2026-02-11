@@ -1,133 +1,209 @@
-<!-- Sección de Certificados -->
-<section id="certificates-section" class="certificates-section" data-aos="fade-up">
-    <div class="section-header">
-        <span class="section-tag"><i class="fas fa-award"></i> Logros</span>
-        <h2 class="section-title">Certificaciones y Cursos</h2>
-        <p class="section-description">Formación continua y especialización profesional</p>
-    </div>
-    
-    <div class="certificates-grid">
-        <!-- Certificado Angular -->
-        <div class="certificate-card" data-aos="zoom-in" data-aos-delay="100">
-            <div class="certificate-image">
-                <a href="assets/css/images/CertificadoAngular.png" data-lightbox="certificados" data-title="Certificado Angular">
-                    <img src="assets/css/images/CertificadoAngular.png" alt="Certificado Angular">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="certificate-info">
-                <div class="certificate-icon">
-                    <i class="fab fa-angular"></i>
-                </div>
-                <h3 class="certificate-title">Angular</h3>
-                <p class="certificate-issuer">Desarrollo Frontend</p>
-                <span class="certificate-badge">Framework</span>
-            </div>
+<section class="section certificates-section" id="certificados">
+    <div class="section-container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">
+                <i class="fas fa-certificate"></i>
+                Certificaciones
+            </span>
+            <h2 class="section-title">Mis Certificados</h2>
+            <p class="section-subtitle">
+                Haz clic en cada certificado para verlo en detalle
+            </p>
         </div>
         
-        <!-- Certificado HTML y CSS -->
-        <div class="certificate-card" data-aos="zoom-in" data-aos-delay="150">
-            <div class="certificate-image">
-                <a href="assets/css/images/Certificado DiseñoWebHtmlYCss.png" data-lightbox="certificados" data-title="Certificado Diseño Web HTML y CSS">
-                    <img src="assets/css/images/Certificado DiseñoWebHtmlYCss.png" alt="Certificado HTML y CSS">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-search-plus"></i>
+        <div class="certificates-showcase">
+            <!-- Certificado 1 - HTML y CSS -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="50" onclick="openCertModal('Diseño web en HTML y CSS', 'Universidad de Manizales - Opened', '2024', 'assets/images/certificates/cert-diseno-web-html-css.png')">
+                <div class="cert-thumb">
+                    <img src="assets/images/certificates/cert-diseno-web-html-css.png" alt="Certificado Diseño web en HTML y CSS" loading="lazy">
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
                     </div>
-                </a>
-            </div>
-            <div class="certificate-info">
-                <div class="certificate-icon">
-                    <i class="fab fa-html5"></i>
                 </div>
-                <h3 class="certificate-title">Diseño Web</h3>
-                <p class="certificate-issuer">HTML5 & CSS3</p>
-                <span class="certificate-badge">Fundamentos</span>
-            </div>
-        </div>
-        
-        <!-- Certificado AWS -->
-        <div class="certificate-card featured" data-aos="zoom-in" data-aos-delay="200">
-            <div class="certificate-image">
-                <a href="assets/css/images/CertificadoAWS.png" data-lightbox="certificados" data-title="Certificado Amazon Web Services (AWS)">
-                    <img src="assets/css/images/CertificadoAWS.png" alt="Certificado AWS">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-search-plus"></i>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fab fa-html5"></i>
                     </div>
-                </a>
-                <span class="featured-badge">
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="certificate-info">
-                <div class="certificate-icon aws">
-                    <i class="fab fa-aws"></i>
-                </div>
-                <h3 class="certificate-title">Amazon Web Services</h3>
-                <p class="certificate-issuer">Cloud Computing</p>
-                <span class="certificate-badge cloud">Cloud</span>
-            </div>
-        </div>
-        
-        <!-- Certificado JavaScript -->
-        <div class="certificate-card" data-aos="zoom-in" data-aos-delay="250">
-            <div class="certificate-image">
-                <a href="assets/css/images/CertificadoJavaScrtp.png" data-lightbox="certificados" data-title="Certificado JavaScript">
-                    <img src="assets/css/images/CertificadoJavaScrtp.png" alt="Certificado JavaScript">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-search-plus"></i>
+                    <div class="cert-content">
+                        <h3>Diseño web en HTML y CSS</h3>
+                        <p class="cert-issuer">Universidad de Manizales - Opened</p>
+                        <span class="cert-year">2024</span>
                     </div>
-                </a>
-            </div>
-            <div class="certificate-info">
-                <div class="certificate-icon js">
-                    <i class="fab fa-js-square"></i>
-                </div>
-                <h3 class="certificate-title">JavaScript</h3>
-                <p class="certificate-issuer">Programación Web</p>
-                <span class="certificate-badge">Lenguaje</span>
-            </div>
-        </div>
-        
-        <!-- Certificado Python -->
-        <div class="certificate-card" data-aos="zoom-in" data-aos-delay="300">
-            <div class="certificate-image">
-                <a href="assets/css/images/CertificadoPythonYShell.png" data-lightbox="certificados" data-title="Certificado Python y Shell Scripting">
-                    <img src="assets/css/images/CertificadoPythonYShell.png" alt="Certificado Python">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-search-plus"></i>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
                     </div>
-                </a>
-            </div>
-            <div class="certificate-info">
-                <div class="certificate-icon python">
-                    <i class="fab fa-python"></i>
                 </div>
-                <h3 class="certificate-title">Python & Shell</h3>
-                <p class="certificate-issuer">Scripting & Automatización</p>
-                <span class="certificate-badge">Backend</span>
             </div>
-        </div>
-        
-        <!-- Certificado Colombo -->
-        <div class="certificate-card" data-aos="zoom-in" data-aos-delay="350">
-            <div class="certificate-image">
-                <a href="assets/css/images/colombo.jpeg" data-lightbox="certificados" data-title="Certificado Centro Colombo Americano - Inglés B2">
-                    <img src="assets/css/images/colombo.jpeg" alt="Certificado Inglés B2">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-search-plus"></i>
+            
+            <!-- Certificado 2 - Angular -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="100" onclick="openCertModal('Angular', 'Universidad de Manizales - Opened', '2024', 'assets/images/certificates/cert-angular.png')">
+                <div class="cert-thumb">
+                    <img src="assets/images/certificates/cert-angular.png" alt="Certificado Angular" loading="lazy">
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
                     </div>
-                </a>
-            </div>
-            <div class="certificate-info">
-                <div class="certificate-icon language">
-                    <i class="fas fa-language"></i>
                 </div>
-                <h3 class="certificate-title">Inglés Avanzado</h3>
-                <p class="certificate-issuer">Centro Colombo Americano</p>
-                <span class="certificate-badge language">Nivel B2</span>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Angular</h3>
+                        <p class="cert-issuer">Universidad de Manizales - Opened</p>
+                        <span class="cert-year">2024</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificado 3 - AWS -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="150" onclick="openCertModal('Amazon Web Services (AWS)', 'Universidad de Manizales - Opened', '2024', 'assets/images/certificates/cert-aws.png')">
+                <div class="cert-thumb">
+                    <img src="assets/images/certificates/cert-aws.png" alt="Certificado Amazon Web Services" loading="lazy">
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
+                    </div>
+                </div>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Amazon Web Services (AWS)</h3>
+                        <p class="cert-issuer">Universidad de Manizales - Opened</p>
+                        <span class="cert-year">2024</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificado 4 - JavaScript -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="200" onclick="openCertModal('JavaScript', 'Universidad de Manizales - Opened', '2024', 'assets/images/certificates/cert-javascript.png')">
+                <div class="cert-thumb">
+                    <img src="assets/images/certificates/cert-javascript.png" alt="Certificado JavaScript" loading="lazy">
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
+                    </div>
+                </div>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>JavaScript</h3>
+                        <p class="cert-issuer">Universidad de Manizales - Opened</p>
+                        <span class="cert-year">2024</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificado 5 - Python y Shell -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="250" onclick="openCertModal('Introducción a Python y Shell Scripting', 'Universidad de Manizales - Opened', '2024', 'assets/images/certificates/cert-python-shell.png')">
+                <div class="cert-thumb">
+                    <img src="assets/images/certificates/cert-python-shell.png" alt="Certificado Introducción a Python y Shell Scripting" loading="lazy">
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
+                    </div>
+                </div>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Introducción a Python y Shell Scripting</h3>
+                        <p class="cert-issuer">Universidad de Manizales - Opened</p>
+                        <span class="cert-year">2024</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificado 6 - IA Nivel Básico (PDF) -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="300" onclick="openCertModal('Inteligencia Artificial - Nivel Básico', 'MinTIC + IU Training', '2025', 'assets/docs/cert-iu-training.pdf')">
+                <div class="cert-thumb cert-thumb-pdf">
+                    <div class="cert-thumb-pdf-inner">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDF</span>
+                    </div>
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
+                    </div>
+                </div>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Inteligencia Artificial - Nivel Básico</h3>
+                        <p class="cert-issuer">MinTIC + IU Training</p>
+                        <span class="cert-year">2025</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificado 7 - Inglés B2 -->
+            <div class="cert-card" data-aos="zoom-in" data-aos-delay="350" onclick="openCertModal('Inglés B2', 'Centro Colombo Americano', '2022', 'assets/images/certificates/cert-english-b2.jpeg')">
+                <div class="cert-thumb">
+                    <img src="assets/images/certificates/cert-english-b2.jpeg" alt="Certificado Inglés B2" loading="lazy">
+                    <div class="cert-thumb-overlay">
+                        <span>Ver certificado</span>
+                    </div>
+                </div>
+                <div class="cert-card-inner">
+                    <div class="cert-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Inglés B2</h3>
+                        <p class="cert-issuer">Centro Colombo Americano</p>
+                        <span class="cert-year">2022</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modal para Certificados -->
+<div id="cert-modal" class="cert-modal">
+    <div class="cert-modal-overlay" onclick="closeCertModal()"></div>
+    <div class="cert-modal-content">
+        <button class="cert-modal-close" onclick="closeCertModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="cert-modal-header">
+            <h3 id="cert-modal-title"></h3>
+            <p id="cert-modal-issuer"></p>
+            <span id="cert-modal-year" class="cert-year"></span>
+        </div>
+        <div class="cert-modal-body">
+            <img id="cert-modal-image" src="" alt="Certificado" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Crect fill=%22%231a1a2e%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%2300e5ff%22 font-family=%22Arial%22 font-size=%2216%22 x=%2250%25%22 y=%2245%25%22 text-anchor=%22middle%22%3ECertificado%3C/text%3E%3Ctext fill=%22%23888%22 font-family=%22Arial%22 font-size=%2212%22 x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22%3EImagen próximamente%3C/text%3E%3C/svg%3E'">
+            <iframe id="cert-modal-pdf" title="Certificado PDF" loading="lazy"></iframe>
+        </div>
+        <div class="cert-modal-footer">
+            <a id="cert-modal-download" class="btn btn-secondary" href="" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-up-right-from-square"></i>
+                <span>Abrir archivo</span>
+            </a>
+            <span class="cert-verified">
+                <i class="fas fa-check-circle"></i>
+                Certificado Verificado
+            </span>
+        </div>
+    </div>
+</div>
